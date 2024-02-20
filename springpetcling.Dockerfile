@@ -11,7 +11,7 @@ RUN git clone https://github.com/spring-projects/spring-petclinic.git && \
 
 
 
-FROM openjdk:11
+FROM openjdk:21-jdk
 
 LABEL project="petclinic"
 
