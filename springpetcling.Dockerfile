@@ -13,7 +13,7 @@ FROM openjdk:21-jdk
 
 LABEL project="petclinic"
 
-LABEL author="devops team"
+LABEL author="bhanu"
 
 EXPOSE 8080
 
