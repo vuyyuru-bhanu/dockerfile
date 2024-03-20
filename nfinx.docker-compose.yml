@@ -1,0 +1,19 @@
+---
+version: '3.9'
+services:
+  webserver:
+    image: nginx
+    ports:
+      - target: 80
+        published: 8081
+        protocol: tcp
+        mode: host
+    networks:
+      - webserver
+networks:
+  webserver:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.0.0/16
