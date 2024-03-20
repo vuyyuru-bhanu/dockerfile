@@ -1,0 +1,29 @@
+---
+version: '3.9'
+services:
+  webserver:
+    image: nginx
+    ports:
+      - target: 80
+        published: 8081
+        protocol: tcp
+        mode: host
+    networks:
+      - webserver    
+  sql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root 
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=bhanu
+      - MYSQL_PASSWORD=root
+    networks:
+      - webserver
+
+networks:
+  webserver:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.0.0/16
